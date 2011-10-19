@@ -1,0 +1,22 @@
+---
+layout: blog
+title: "Blogs by Tag :: Josh D Miller :: joshdmiller.com"
+---
+<div class='posts'>
+  {% for tag in site.tags %}
+    {% assign name  = tag[0] %}
+    {% assign posts = tag[1] %}
+    <div class="post" id="{{ name }}">
+        <h2 class="post-title"><a href="/tags.html#{{ name }}">{{ name }}</a></h2>
+      <div class='post-content'>
+      <ul>
+        {% for post in posts %}
+          <li>
+          <a href="{{ post.id }}.html">{{ post.posttitle }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+      </div>
+    </div>
+  {% endfor %}
+</div>

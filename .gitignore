@@ -1,0 +1,5 @@
+*.sw*
+*.out
+*.~
+_site/
+_jekyll_s3.yml

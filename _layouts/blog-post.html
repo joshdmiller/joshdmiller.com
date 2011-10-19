@@ -1,0 +1,19 @@
+---
+layout: blog
+section: blog
+---
+
+<div class="post">
+    <h2 class="post-title">
+        <a href="{{page.url}}">{{ page.posttitle }}</a>
+    </h2>
+    <div class="post-metadata">
+        <span class="post-author">by Josh</span>
+        <span class="post-date">on {{ page.date | date_to_long_string }}</span>
+        <span class="post-tags">&nbsp;|&nbsp; with Tags: {% for tag in page.tags %}<a href="/tags.html#{{ tag }}">{{ tag }}</a> {% endfor %}</span>
+    </div>
+    <div class="post-content">
+        {{ content }}
+    </div>
+</div>
+

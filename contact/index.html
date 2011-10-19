@@ -1,0 +1,104 @@
+---
+layout: about
+section: contact
+title: "Contact :: Josh D Miller :: joshdmiller.com"
+---
+<script type="text/javascript">
+    
+    // Email.js version 5
+    var tld_ = new Array()
+    tld_[0] = "com";
+    tld_[1] = "org";
+    tld_[2] = "net";
+    tld_[3] = "ws";
+    tld_[4] = "info";
+    tld_[10] = "co.uk";
+    tld_[11] = "org.uk";
+    tld_[12] = "gov.uk";
+    tld_[13] = "ac.uk";
+    var topDom_ = 13;
+    var m_ = "mailto:";
+    var a_ = "@";
+    var d_ = ".";
+
+    function mail(name, dom, tl, params)
+    {
+            var s = e(name,dom,tl);
+            document.write('<a href="'+m_+s+params+'">'+s+'</a>');
+    }
+    function mail2(name, dom, tl, params, display)
+    {
+            document.write('<a href="'+m_+e(name,dom,tl)+params+'">'+display+'</a>');
+    }
+    function e(name, dom, tl)
+    {
+            var s = name+a_;
+            if (tl!=-2)
+            {
+                    s+= dom;
+                    if (tl>=0)
+                            s+= d_+tld_[tl];
+            }
+            else
+                    s+= swapper(dom);
+            return s;
+    }
+    function swapper(d)
+    {
+            var s = "";
+            for (var i=0; i<d.length; i+=2)
+                    if (i+1==d.length)
+                            s+= d.charAt(i)
+                    else
+                            s+= d.charAt(i+1)+d.charAt(i);
+            return s.replace(/\?/g,'.');
+    }
+
+var email_image = '<img src="/images/email_icon.png" width="75px" height="75px" style="float: left; margin-right: 10px;" />';
+
+</script>
+
+
+<div class="post">
+    <h2 class="post-title">Get in Touch!</h2>
+    <div class="post-content" id="email_container">
+        <script>mail2( "josh", "joshdmiller", 0, "", email_image );</script>
+        <p>
+          Want to get in touch? Send me an email by clicking the icon to the left. Just want
+          to keep in touch? <a href="/rss.xml">Add my blog</a> to your favorite RSS feed reader,
+          <a href="http://www.twitter.com/joshdmiller">follow me</a> on the Twitter, or 
+          <a href="http://www.linkedin.com/in/joshdmiller">network with me</a> on LinkedIn. I
+          look forward to hearing from you!
+        </p>
+    </div>
+</div>
+
+<div class="post">
+    <h2 class="post-title">Twitter Feed</h2>
+    <div class="post-content" id="tweet">
+        
+    </div>
+</div>
+
+<script type="text/javascript">
+$('#tweet').jTweetsAnywhere({
+    username: "joshdmiller",
+    count: 5,
+    showTweetFeed: {
+        expandHovercards: true,
+        showSource: true
+        },
+        showTweetFeed: {
+            showTimestamp: {
+                refreshInterval: 15
+            },
+            autorefresh: {
+                mode: 'trigger-insert',
+                interval: 30
+            },
+            showProfileImages: true,
+            showUserScreenNames: true
+        }
+});
+</script>
+

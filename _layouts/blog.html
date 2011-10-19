@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="side-col-right">
+    <div class="box">
+        <h3>Keep in Touch</h3>
+        <ul class="socnet">
+            <li class="rss"><a href="/feed">Subscribe to the Feed</a></li>
+            <li class="twitter"><a href="http://www.twitter.com/joshdmiller" target="_blank">Follow me on Twitter</a></li>
+            <li class="linkedin"><a href="http://www.linkedin.com/in/joshdmiller" target="_blank">Connect with me on LinkedIn</a></li>
+        </ul>
+    </div>
+
+    <div class="box">
+        <h3>About Me</h3>
+        <p>I am an open-source software expert and technical program manager.In 2009, I co-founded GDS to support awareness,
+           advocacy, and adoption of open licensing. As a member of the <a href="http://www.aaas.org" target="_blank">AAAS</a>,
+           <a href="http://www.aibs.org" target="_blank">AIBS</a>, and <a href="http://www.centerforinquiry.net" target="_blank">CFI</a>, 
+           I advocate greater awareness of science and critical thinking. </p>
+        <p><a href="/about">Continue reading &#187;</a></p>
+    </div>
+
+    <div class="box">
+        <h3><a href="/archives.html">Archives</a></h3>
+        <ul class="navigation">
+            {% for year in site.years %}
+                {% for month in year %}
+                    {% for post in month %}
+                        {% assign count = forloop.length %}
+                    {% endfor %}
+                    <li><a href="/archives.html#{{ year.first.first.date | date: "%Y" }}-{{ month.first.date | date: "%B" }}">
+                        {{ month.first.date | date: "%B" }} {{ year.first.first.date | date: "%Y" }} ({{ count }})
+                    </a></li>
+                {% endfor %}                                                                                                  
+            {% endfor %}   
+        </ul>
+    </div>
+
+    <div class="box">
+        <h3><a href="/tags.html">Tag Cloud</a></h3>
+        <ul id="tagList">
+            {% tag_cloud font-size: 0.8  - 1.8em  %}
+        </ul>
+    </div>
+</div>
+
+<div class="main-col-left">
+    {{ content }}
+</div>

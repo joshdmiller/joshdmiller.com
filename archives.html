@@ -1,0 +1,23 @@
+---
+layout: blog
+title: "Blogs by Month :: Josh D Miller :: joshdmiller.com"
+---
+<div class='posts'>
+{% for theyear in site.years %}
+    {% capture year %}{{ theyear.first.first.date | date: "%Y" }}{% endcapture %}
+    <div class="post" id="{{ year }}">
+        <h2 class="post-title"><a href="/archives.html#{{ year }}">{{ year }}</a></h2>
+        <div class='post-content'>
+            {% for themonth in theyear %}
+            {% capture month %}{{ themonth.first.date | date: "%B" }}{% endcapture %}
+            <b id="{{ year }}-{{ month }}">{{month}}</b>
+            <ul>
+                {% for post in themonth %}
+                <li><a href="{{ post.id }}.html">{{ post.posttitle }}</a></li>
+                {% endfor %}
+            </ul>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}
+</div>

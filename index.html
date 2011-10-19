@@ -1,0 +1,24 @@
+---
+layout: blog
+title: "Blog :: Josh D Miller :: joshdmiller.com"
+---
+
+{% for post in site.posts limit:5 %}
+<div class="post">
+    <h2 class="post-title"><a href="{{ post.url }}">{{ post.posttitle }}</a></h2>
+    <div class="post-metadata">
+        <span class="post-author">by Josh</span>
+        <span class="post-date">on {{ post.date | date_to_long_string }}</span>
+        <span class="post-tags">&nbsp;|&nbsp; with Tags: {% for tag in post.tags %}<a href="/tags.html#{{ tag }}">{{ tag }}</a> {% endfor %}</span>
+    </div>
+    <div class="post-content">
+        {% capture summary %}{{ post.content | summarize }}{% endcapture %}
+        {% if summary != post.content %}
+            {{ summary }}
+            <p><a href="{{ post.url }}">Continue reading »</a></p>
+        {% else %}
+            {{ post.content }}
+        {% endif %}
+    </div>
+</div>
+{% endfor %}
