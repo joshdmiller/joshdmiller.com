@@ -115,7 +115,7 @@ begat from the general lack of awareness of the insanely high percentage of
 scientists across all disciplines who accept these two ideas - 84% and 98%,
 respectively ([Pew 2009][pewscience]). My real fear comes from the less
 discussed statistics, like 25% of Americans believe in the predictive power of
-astrology, 18% have seen a ghost ([Pew 2009][pewfaith]), and other statistics of
+astrology, 18% have seen a ghost ([Pew 2009][pewfaiths]), and other statistics of
 interest that are not from ignorance but rather from a lack of critical
 thinking.
 

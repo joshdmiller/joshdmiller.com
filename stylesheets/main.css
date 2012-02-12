@@ -142,6 +142,8 @@ a:hover, a:active, a:focus {
     background: transparent url("/images/twitter-14x14.png") left center no-repeat !important; }
   .box ul.socnet li.linkedin {
     background: transparent url("/images/linkedin-14x14.png") left center no-repeat !important; }
+  .box ul.socnet li.gplus {
+    background: transparent url("/images/gplus-14x14.png") left center no-repeat !important; }
   .box ul.navigation a {
     padding-left: 20px;
     background: transparent url(/images/arrowbullet.png) left center no-repeat; }

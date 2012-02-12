@@ -1,10 +1,10 @@
 ---
 ---
-<xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" ?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <title type="text" xml:lang="en">Vito's journal</title>
-    <link type="application/atom+xml" href="http://vitobotta.com/feed/" rel="self"/>
-    <link type="text" href="http://vitobotta.com" rel="alternate"/>
+    <title type="text" xml:lang="en">joshdmiller.com | Blog</title>
+    <link type="application/atom+xml" href="http://joshdmiller.com/rss.xml" rel="self"/>
+    <link type="text" href="http://joshdmiller.com" rel="alternate"/>
     <updated>{{ site.time | date_to_xmlschema }}</updated>
     <id>http://www.joshdmiller.com</id>
     <author>
@@ -17,7 +17,15 @@
         <link href="http://www.joshdmiller.com{{ post.url }}/"/>
         <updated>{{ post.date | date_to_xmlschema }}</updated>
         <id>http://www.joshdmiller.com{{ post.url }}/</id>
-        <summary type="html">{{ post.excerpt | xml_escape }}</summary>
+        <summary type="html">
+            {% capture summary %}{{ post.content | summarize }}{% endcapture %}
+            {% if summary != post.content %}
+                {{ summary | xml_escape }}
+                <p><a href="{{ post.url }}">Continue reading »</a></p>
+            {% else %}
+                {{ post.content | xml_escape }}
+            {% endif %}
+        </summary>
     </entry>
     {% endfor %}
 </feed>

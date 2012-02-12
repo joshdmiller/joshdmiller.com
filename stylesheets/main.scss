@@ -212,6 +212,9 @@ a:hover, a:active, a:focus {
         li.linkedin {
             @include listicon("/images/linkedin-14x14.png");
         }
+        li.gplus {
+            @include listicon("/images/gplus-14x14.png");
+        }
     }
 
     ul.navigation {
