@@ -1,0 +1,38 @@
+---
+layout: blog-post
+title: "Support AB 2109 :: Josh D Miller :: joshdmiller.com"
+posttitle: Support AB 2109
+tags:
+    - science
+    - society
+---
+
+[AB 2109][ab] is a bill introduced in the California State Assembly to increase child
+vaccination rates. It would require the existing philosophical exemption to be
+accompanied by a physician-signed form indicating that the physician has
+supplied the parent with "information regarding the benefits and risks of the
+immunization and the health risks of specified communicable diseases".
+
+Why is this important? As it exists, any parent can exempt their child from
+public school vaccination requirements by simply signing a form indicating a
+philosophical objection to vaccination. Considering both the public health
+risks of decreasing vaccination rates and the proven safety and efficacy
+profile of vaccinations, why should it be harder to have a child vaccinated
+than to exempt her?
+
+The law simply requires informed consent on behalf of the parent through a
+visit with a qualified health care professional, which visit is almost surely
+covered by either their private insurance or Medicaid/Medi-Cal benefits.
+
+Solid coverage of the bill can be found in [this article][article] by Dr. David
+Gorski at the wonderful [Science-Based Medicine][sbm] blog and the full text of
+the bill is attached.
+
+I ask my friends in California to join me in writing a letter to our state
+assembly and senate representatives as well as to Governor Brown asking for
+their support for this important cause.
+
+[article]: http://bit.ly/HlCRQT
+[sbm]: http://bit.ly/GY9pfT
+[ab]: http://1.usa.gov/HlFLBx
+
