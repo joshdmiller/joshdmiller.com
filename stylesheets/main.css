@@ -197,6 +197,11 @@ a:hover, a:active, a:focus {
   -webkit-box-shadow: 0 2px 0 #2c2c2c; }
   .post .post-content p img {
     text-align: center; }
+  .post .post-content pre {
+    background-color: #CCF;
+    border: 1px solid #4486DB;
+    margin: 10px;
+    padding: 10px; }
 
 /** Tag Cloud **/
 ul#tagList {
