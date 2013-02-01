@@ -1,0 +1,25 @@
+{
+  "author": "Josh David Miller",
+  "name": "joshdmiller.com",
+  "version": "0.0.1-SNAPSHOT",
+  "homepage": "http://joshdmiller.com",
+  "licenses": {
+    "type": "GPL",
+    "url": "https://raw.github.com/joshdmiller/joshdmiller.com/master/LICENSE"
+  },
+  "bugs": "https://github.com/joshdmiller/joshdmiller.com/issues",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:joshdmiller/joshdmiller.com.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "grunt": "~0.4.0rc7",
+    "grunt-recess": "~0.3.0",
+    "grunt-contrib-clean": "~0.4.0rc6",
+    "grunt-contrib-copy": "~0.4.0rc7",
+    "grunt-contrib-jshint": "~0.1.0",
+    "grunt-contrib-concat": "~0.1.2rc6",
+    "grunt-contrib-watch": "~0.2.0rc7"
+  }
+}
