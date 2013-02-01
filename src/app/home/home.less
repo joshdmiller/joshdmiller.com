@@ -1,0 +1,55 @@
+.masthead {
+  h1 {
+    line-height: 60px;
+    font-size: 60px;
+  }
+  
+  h2 {
+    line-height: 20px;
+    font-size: 30px;
+  }
+}
+
+.highlights {
+  margin-top: 30px;
+
+  a {
+    color: @white;
+
+    &:hover {
+      text-decoration: none;
+      color: @white;
+    }
+  }
+
+  .img-circle {
+    width: 140px;
+    height: 140px;
+    .transition( background-color 0.5s );
+    text-align: center;
+    line-height: 140px;
+
+    &.contact {
+      background-color: #FF0000;
+      &:hover {
+        background-color: darken( #FF0000, 15% );
+      }
+    }
+
+    &.past {
+      background-color: @bodyBackground;
+      &:hover {
+        background-color: darken( @bodyBackground, 20% );
+      }
+    }
+
+    &.projects {
+      background-color: #9900E5;
+      &:hover {
+        background-color: darken( #9900E5, 20% );
+      }
+    }
+
+  }
+}
+

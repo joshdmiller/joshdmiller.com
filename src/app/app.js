@@ -1,5 +1,6 @@
 angular.module( 'jdmApp', [
   'home',
+  'placeholders',
   'templates' // The HTML templates, thrown into $templateCache during build.
 ])
 

@@ -24,7 +24,7 @@
             <a href="#/home"><i class="icon-home"></i> Home</a>
           </li>
           <li ng-class="{ active: !isAt( '/in-the-past' ) }">
-            <a href="#/resume"><i class="icon-ok-sign"></i> What I've Done</a>
+            <a href="#/what-ive-done"><i class="icon-ok-sign"></i> What I've Done</a>
           </li>
           <li ng-class="{ active: !isAt( '/projects' ) }">
             <a href="#/projects"><i class="icon-folder-open"></i> What I'm Doing</a>
@@ -40,7 +40,16 @@
 
     <footer class="footer">
       <div class="container">
-        <p class="pull-right">
+        <ul class="social">
+          <!-- FIXME: replace with directive for masking the address -->
+          <li><a target="_blank" href="mailto:josh@joshdmiller.com"><i class="icon-envelope-alt"></i></a></li>
+          <li><a target="_blank" href="http://gplus.to/joshdmiller"><i class="icon-google-plus"></i></a></li>
+          <li><a target="_blank" href="http://twitter.com/joshdmiller"><i class="icon-twitter"></i></a></li>
+          <li><a target="_blank" href="http://linkedin.com/in/joshdmiller"><i class="icon-linkedin"></i></a></li>
+          <li><a target="_blank" href="http://github.com/joshdmiller"><i class="icon-github"></i></a></li>
+        </ul>
+
+        <p>
           <a href="#"><i class="icon-arrow-up"></i> Back to Top</a>
           <br />
           <br />
@@ -55,15 +64,6 @@
           and 
           <a href="http://fortawesome.github.com/Font-Awesome">Font Awesome</a>.
         </p>
-
-        <ul class="social">
-          <!-- FIXME: replace with directive for masking the address -->
-          <li><a href="mailto:josh@joshdmiller.com"><i class="icon-envelope"></i></a></li>
-          <li><a href="http://gplus.to/joshdmiller"><i class="icon-google-plus"></i></a></li>
-          <li><a href="http://twitter.com/joshdmiller"><i class="icon-twitter"></i></a></li>
-          <li><a href="http://linkedin.com/in/joshdmiller"><i class="icon-linkedin"></i></a></li>
-          <li><a href="http://github.com/joshdmiller"><i class="icon-github"></i></a></li>
-        </ul>
 
       </div>
     </footer>

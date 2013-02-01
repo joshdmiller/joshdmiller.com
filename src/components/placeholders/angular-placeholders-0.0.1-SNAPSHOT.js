@@ -44,8 +44,8 @@ angular.module( 'placeholders.img', [] )
        */
       var config = {
         text_size: 10,
-        fill_color: '#EEEEEE',
-        text_color: '#AAAAAA'
+        fill_color: '#FFFFFF',
+        text_color: '#003366'
       };
 
       /**

@@ -11,6 +11,7 @@
 @import '../../vendor/bootstrap/less/grid.less';
 @import '../../vendor/bootstrap/less/utilities.less';
 @import '../../vendor/bootstrap/less/navs.less';
+@import '../../vendor/bootstrap/less/thumbnails.less';
 
 // Import Page Font
 @import 'http://fonts.googleapis.com/css?family=Rambla';
@@ -76,11 +77,12 @@
  */
 
 .main {
+  padding-bottom: 30px;
+  padding-top: 60px;
   background-color: @backgroundColorMain;
   border-top: 1px solid darken( @backgroundColorMain, 10% );
   .box-shadow( inset 1px 4px 9px -6px rgba( 0, 0, 0, .15 ) );
 }
-
 
 /**
  * Footer
@@ -102,18 +104,14 @@
     }
   }
 
-  .pull-right {
-    text-align: right;
-  }
-
   .social {
-    float: left;
+    float: right;
     margin: 0;
     list-style: none;
 
     li {
       float: left;
-      margin-left: 20px;
+      margin-right: 20px;
 
       a {
         .transition( color 0.25s );
@@ -122,5 +120,11 @@
     }
   }
 }
+
+/**
+ * Component Stylesheets
+ */
+
+@import '../app/home/home.less';
 
 
