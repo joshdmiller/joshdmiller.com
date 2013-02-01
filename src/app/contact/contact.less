@@ -1,0 +1,47 @@
+.contact {
+  .row {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .social {
+    li {
+      margin: 5px 0;
+    }
+
+    a {
+      .border-radius( 10px );
+      font-size: 32px;
+      line-height: 40px;
+      text-shadow: none;
+
+      .transition( 0.25s );
+
+      &:hover {
+        background-color: @bodyBackground;
+        color: @white;
+      }
+    }
+  }
+
+  .headline {
+    margin-top: 30px;
+    font-size: 60px;
+    line-height: 100px;
+
+    .huge {
+      font-size: 100px;
+      font-weight: bold;
+      letter-spacing: 3px;
+      color: @colorstripColor;
+    }
+
+    .highlight {
+      color: #FF6600;
+    }
+  }
+}
