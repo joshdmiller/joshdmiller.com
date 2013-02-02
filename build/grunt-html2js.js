@@ -5,10 +5,8 @@
  */
 module.exports = function (grunt) {
 
-  // HTML-2-JS Templates
   var path = require('path'),
       TPL = 'angular.module("<%= id %>", []).run(["$templateCache", function($templateCache) {\n  $templateCache.put("<%= id %>",\n    "<%= content %>");\n}]);\n',
-      templateModule = "angular.module('templates', [<%= templates %>]);\n",
       escapeContent = function(content) {
         return content.replace(/"/g, '\\"').replace(/\r?\n/g, '" +\n    "');
       },
@@ -19,11 +17,12 @@ module.exports = function (grunt) {
         return p;
       };
 
-  grunt.registerTask('html2js', 'Generate js version of html template.', function() {
-    this.requiresConfig('html2js.src');
-    var files = grunt.file.expand( grunt.config('html2js.src') ),
-        base = grunt.config('html2js.base') || '.',
-        dest = grunt.config('html2js.dest') || '.',
+  grunt.registerMultiTask('html2js', 'Generate js version of html template.', function() {
+    this.requiresConfig( 'src' );
+    var files = grunt.file.expand( this.data.src ),
+        templateModule = "angular.module('"+ this.target +"-templates', [<%= templates %>]);\n",
+        base = this.data.base || '.',
+        dest = this.data.dest || '.',
         templates = [];
 
     files.forEach(function(file) {
@@ -39,7 +38,7 @@ module.exports = function (grunt) {
       }));
     });
 
-    grunt.file.write( path.resolve( dest,'templates.js' ), grunt.template.process( templateModule, {
+    grunt.file.write( path.resolve( dest, this.target + '.templates.js' ), grunt.template.process( templateModule, {
       data: {
         templates: templates.join(', ')
       }

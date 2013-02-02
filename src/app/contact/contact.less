@@ -1,13 +1,4 @@
 .contact {
-  .row {
-    margin-top: 30px;
-    margin-bottom: 30px;
-
-    &:first-child {
-      margin-top: 0;
-    }
-  }
-
   .social {
     li {
       margin: 5px 0;
@@ -42,6 +33,28 @@
 
     .highlight {
       color: #FF6600;
+    }
+  }
+
+  .stream {
+    li {
+      margin: 10px 0;
+      padding: 5px;
+      .border-radius( 6px );
+      .transition( background-color 0.25s );
+
+      &:hover {
+        background-color: lighten( #FF6600, 20% );
+      }
+    }
+
+    .date {
+      font-size: 13px;
+      color: @grayLight;
+    }
+
+    .link-to-post {
+      font-size: 13px;
     }
   }
 }

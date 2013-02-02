@@ -4,7 +4,8 @@ angular.module( 'jdmApp', [
   'projects',
   'contact',
   'placeholders',
-  'templates' // The HTML templates, thrown into $templateCache during build.
+  'app-templates',      // The HTML templates from src/app, thrown into $templateCache during build.
+  'component-templates' // The HTML templates from src/components, thrown into $templateCache during build.
 ])
 
 .config([ '$routeProvider', function ( $routeProvider ) {

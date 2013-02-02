@@ -25,9 +25,13 @@ module.exports = function ( grunt ) {
     },
     src: {
       js: [ 'src/**/*.js', '!src/**/*.spec.js', '<%= distdir %>/tmp/**/*.js' ],
-      tpl: [ 'src/app/**/*.tpl.html' ],
+      atpl: [ 'src/app/**/*.tpl.html' ],
+      ctpl: [ 'src/components/**/*.tpl.html' ],
       html: [ 'src/index.html' ],
       less: 'src/less/main.less'
+    },
+    test: {
+      unit: [ 'src/**/*.spec.js' ]
     },
     clean: [ '<%= distdir %>' ],
     copy: {
@@ -68,7 +72,7 @@ module.exports = function ( grunt ) {
       }
     },
     jshint: {
-      all: [ 'Gruntfile.js', '<%= src.js %>' ],
+      all: [ 'Gruntfile.js', '<%= src.js %>', '<%= test.unit %>' ],
       options: {
         curly: true,
         immed: true,
@@ -81,19 +85,26 @@ module.exports = function ( grunt ) {
       globals: {}
     },
     html2js: {
-      src: [ '<%= src.tpl %>' ],
-      base: 'src/app',
-      dest: 'dist/tmp'
+      app: {
+        src: [ '<%= src.atpl %>' ],
+        base: 'src/app',
+        dest: 'dist/tmp'
+      },
+      component: {
+        src: [ '<%= src.ctpl %>' ],
+        base: 'src/components',
+        dest: 'dist/tmp'
+      }
     },
     watch: {
-      files: [ '<%= src.tpl %>', '<%= src.js %>', '<%= src.html %>', 'src/**/*.less' ],
+      files: [ '<%= src.atpl %>', '<%= src.ctpl %>', '<%= src.js %>', '<%= src.html %>', 'src/**/*.less', '<%= test.unit %>' ],
       tasks: [ 'default', 'timestamp' ]
     }
   });
 
   // The default task
   grunt.registerTask( 'default', [ 'build' ] );
-  grunt.registerTask( 'build', ['clean', 'html2js', 'jshint', 'concat', 'recess:build', 'index', 'copy'] );
+  grunt.registerTask( 'build', ['clean', 'html2js', 'jshint', 'test', 'concat', 'recess', 'index', 'copy'] );
 
   // Compile the index.html template
   grunt.registerTask( 'index', 'Process index.html template', function () {

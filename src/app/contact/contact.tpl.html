@@ -13,7 +13,7 @@
         <li><a target="_blank" href="http://gplus.to/joshdmiller"><i class="icon-google-plus-sign"></i> Google+</a></li>
         <li><a target="_blank" href="http://twitter.com/joshdmiller"><i class="icon-twitter-sign"></i> Twitter</a></li>
         <li><a target="_blank" href="http://linkedin.com/in/joshdmiller"><i class="icon-linkedin-sign"></i> LinkedIn</a></li>
-        <li><a target="_blank" href="http://github.com/joshdmiller"><i class="icon-github"></i> GitHub</a></li>
+        <li><a target="_blank" href="http://github.com/joshdmiller"><i class="icon-github-sign"></i> GitHub</a></li>
       </ul>
     </div>
     <div class="span8">
@@ -24,9 +24,22 @@
     </div>
   </div>
   <div class="row">
-    <div class="header">
-      <div class="header-inner">
-        Things I've Said Recently
+    <div class="span6">
+      <div class="header">
+        <div class="header-inner"><i class="icon-twitter-sign"></i> Recent Tweets</div>
+      </div>
+      <div class="loading" ng-hide="tweets">{{twitterMsg}}</div>
+      <ul class="unstyled stream">
+        <li ng-repeat="tweet in tweets"
+          tweet="{{tweet.id_str}}" 
+          tweet-body="{{tweet.text}}" 
+          tweet-date="{{tweet.created_at}}">
+        </li>
+      </ul>
+    </div>
+    <div class="span6">
+      <div class="header">
+        <div class="header-inner"><i class="icon-google-plus-sign"></i> Recent Posts to Google+</div>
       </div>
     </div>
   </div>
