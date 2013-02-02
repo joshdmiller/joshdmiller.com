@@ -1,4 +1,4 @@
-angular.module( 'contact', [ 'twitter', 'prettydate' ] )
+angular.module( 'contact', [ 'twitter', 'googleplus', 'prettydate' ] )
 
 .config( [ '$routeProvider', function ( $routeProvider ) {
   $routeProvider.when( '/contact', {
@@ -7,12 +7,17 @@ angular.module( 'contact', [ 'twitter', 'prettydate' ] )
   });
 }])
 
-.controller( 'ContactCtrl', [ '$scope', 'twitterService', function ( $scope, twitterService ) {
-  $scope.twitterMsg = 'Loading...';
-
+.controller( 'ContactCtrl', [ '$scope', 'twitterService', 'googlePlusService', function ( $scope, twitterService, googlePlusService ) {
   twitterService( 'joshdmiller' ).then( function twitterServiceSuccess( tweets ) {
     $scope.tweets = tweets;
   }, function twitterServiceFailure () {
-    $scope.twitterMsg = 'Oh no! I couldn\'t fetch the tweets...';
+    $scope.twitterError = true;
+  });
+
+  googlePlusService( '107119852442751861456' ).then( function gplusServiceSuccess( data ) {
+    $scope.posts = data.items;
+  }, function gplusServiceFailure () {
+    $scope.gplusError = true;
   });
 }]);
+

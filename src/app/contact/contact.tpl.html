@@ -28,18 +28,32 @@
       <div class="header">
         <div class="header-inner"><i class="icon-twitter-sign"></i> Recent Tweets</div>
       </div>
-      <div class="loading" ng-hide="tweets">{{twitterMsg}}</div>
       <ul class="unstyled stream">
+        <li ng-hide="tweets || twitterError"><i class="icon-spinner icon-spin icon-2x"></i> Loading...</li>
         <li ng-repeat="tweet in tweets"
           tweet="{{tweet.id_str}}" 
           tweet-body="{{tweet.text}}" 
           tweet-date="{{tweet.created_at}}">
         </li>
       </ul>
+      <div class="alert alert-danger" ng-show="twitterError">
+        Oh no! I couldn't load the tweets from Twitter.
+      </div>
     </div>
     <div class="span6">
       <div class="header">
         <div class="header-inner"><i class="icon-google-plus-sign"></i> Recent Posts to Google+</div>
+      </div>
+      <ul class="unstyled stream">
+        <li ng-hide="posts || gplusError"><i class="icon-spinner icon-spin icon-2x"></i> Loading...</li>
+        <li ng-repeat="post in posts" 
+          gplus-post="{{post.title}}"
+          gplus-url="{{post.url}}"
+          gplus-date="{{post.published | date:'yyyy-MM-dd HH:mm'}}">
+        </li>
+      </ul>
+      <div class="alert alert-danger" ng-show="gplusError">
+        Oh no! I couldn't load the posts from Google+.
       </div>
     </div>
   </div>

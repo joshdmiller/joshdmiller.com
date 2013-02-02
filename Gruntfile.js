@@ -58,7 +58,7 @@ module.exports = function ( grunt ) {
         dest: '<%= distdir %>/assets/<%= pkg.name %>.js'
       },
       angular: {
-        src: [ 'vendor/angular/angular.js' ],
+        src: [ 'vendor/angular/angular.js', 'vendor/angular/angular-sanitize.js' ],
         dest: '<%= distdir %>/assets/angular.js'
       }
     },
