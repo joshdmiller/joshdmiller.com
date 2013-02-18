@@ -1,4 +1,8 @@
-angular.module( 'contact', [ 'twitter', 'googleplus', 'prettydate' ] )
+angular.module( 'contact', [ 
+  'twitter', 
+  'googleplus', 
+  'prettydate'
+])
 
 .config( [ '$routeProvider', function ( $routeProvider ) {
   $routeProvider.when( '/contact', {

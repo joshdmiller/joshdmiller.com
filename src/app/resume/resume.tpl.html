@@ -1,8 +1,68 @@
 <div class="container">
+
   <div class="row">
-    <div class="span12">
-      <h1>What I've Done Before</h1>
+    <div class="span4">
+      <div class="resume-header huge highlight">IN BRIEF</div>
+    </div>
+    <div class="span8">
+      <p class="me-desc" ph-txt="2s"></p>
     </div>
   </div>
+
+  <div class="row">
+    <div class="span12">
+      <div class="resume-skills-chart" resume-skills-chart></div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="span12">
+      <div class="resume-header center">
+        Yada yada something with 
+        <span class="highlight">12 YEARS</span> 
+        experience in something.
+      </div>
+      
+      <div class="resume-timeline" resume-timeline></div>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="span6">
+      <div class="resume-header">
+        Diverse 
+        <span class="highlight">skills</span> 
+        in tech, business.
+      </div>
+
+      <div class="resume-skills">
+        <div ng-repeat="skill in skills" class="skill">
+          <div class="row-fluid">
+            <div class="span8">
+              <div class="skill-label skill-label-{{$index}}">{{skill.label}}</div>
+            </div>
+            <div class="span4">
+              <div class="label label-{{$index}}">
+                {{skill.amt}}%
+              </div>
+            </div>
+          </div>
+          <div class="row-fluid">
+            <div class="span12">
+              <span ng-repeat="keyword in skill.keywords" class="skill-keyword">
+                {{keyword}}
+                <span ng-hide="$last"> - </span>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="span6">
+      <div class="resume-header">Transferable across <span class="highlight">verticals</span>.</div>
+      <div class="resume-verticals" resume-verticals></div>
+    </div>
+  </div>
+
 </div>
 

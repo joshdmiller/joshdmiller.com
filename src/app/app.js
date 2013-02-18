@@ -18,7 +18,7 @@ angular.module( 'jdmApp', [
 
 .controller( 'HeaderCtrl', [ '$scope', '$location', function ( $scope, $location ) {
   $scope.isAt = function ( path ) {
-    if ( $location.path() == path ) {
+    if ( $location.path() === path ) {
       return true;
     } else {
       return false;

@@ -1,0 +1,527 @@
+/**
+ * Colors
+ */
+
+@resume-accent:  #EFEFEF;
+@resume-accent2: #DEDEDE;
+
+@resume-color1a:  #336699;
+@resume-color1: lighten( @resume-color1a, 20% );
+@resume-color2a:  #00AA00;
+@resume-color2: lighten( @resume-color2a, 20% );
+@resume-color3a:  #FF6600;
+@resume-color3: lighten( @resume-color3a, 20% );
+@resume-color4a:  #FF0080;
+@resume-color4: lighten( @resume-color4a, 20% );
+@resume-color6a: #FFAA00;
+@resume-color6: lighten( @resume-color6a, 20% );
+@resume-color5a: #21BEDE;
+@resume-color5: lighten( @resume-color5a, 20% );
+
+
+/** 
+ * Resume Header
+ */
+
+.resume-header {
+
+  color: @resume-color1a;
+  font-size: 28px;
+  line-height: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &.center {
+    text-align: center;
+  }
+
+  .highlight, &.highlight {
+    color: @resume-color3a;
+  }
+
+  .huge, &.huge {
+    font-size: 80px;
+    line-height: 80px;
+  }
+}
+
+.me-desc {
+  font-size: 18px;
+  line-height: 22px;
+}
+
+
+/**
+ * Skills Chart
+ */
+
+.resume-skills-chart {
+  .inner-circle {
+    stroke: @resume-accent;
+    stroke-width: 40px;
+    stroke-opacity: 0.75;
+    fill: none;
+  }
+
+  .outer-circle, .inner-circle-ib, .inner-circle-ob, .center-circle-ob {
+    stroke: @resume-accent2;
+    fill: none;
+    stroke-width: 1px;
+    stroke-opacity: 0.75;
+  }
+
+  .center-circle {
+    fill: @resume-accent;
+    stroke: none;
+  }
+
+  .label-line {
+    stroke-width: 2px;
+    fill: none;
+    .transition( 250ms ease-in-out );
+  }
+
+  .label-circle {
+    fill: none;
+    .transition( 250ms ease-in-out );
+  }
+
+  .arc {
+    stroke-width: 40px;
+    fill: none;
+    .transition( 250ms ease-in-out );
+
+    &.hover {
+      stroke-width: 50px;
+    }
+  }
+
+  .label-text {
+    font-size: 20px;
+    .transition( 250ms ease-in-out );
+  }
+
+  .label-desc {
+    font-size: 16px;
+    fill: #999;
+    .transition( 250ms ease-in-out );
+
+    &.hover {
+      fill: #444;
+    }
+  }
+
+  .one {
+    .label-line, &.arc {
+      stroke: @resume-color1;
+    }
+    .label-circle, &.label-text {
+      fill: @resume-color1;
+    }
+  }
+
+  .two {
+    .label-line, &.arc {
+      stroke: @resume-color2;
+    }
+    .label-circle, &.label-text {
+      fill: @resume-color2;
+    }
+  }
+
+  .three {
+    .label-line, &.arc {
+      stroke: @resume-color3;
+    }
+    .label-circle, &.label-text {
+      fill: @resume-color3;
+    }
+  }
+
+  .four {
+    .label-line, &.arc {
+      stroke: @resume-color4;
+    }
+    .label-circle, &.label-text {
+      fill: @resume-color4;
+    }
+  }
+
+  .hover .one, .one.hover {
+    .label-line, &.arc {
+      stroke: @resume-color1a;
+    }
+    .label-circle, &.label-text {
+      fill: @resume-color1a;
+    }
+  }
+
+  .hover .two, .two.hover {
+    .label-line, &.arc {
+      stroke: @resume-color2a;
+    }
+    .label-circle, &.label-text {
+      fill: @resume-color2a;
+    }
+  }
+
+  .hover .three, .three.hover {
+    .label-line, &.arc {
+      stroke: @resume-color3a;
+    }
+    .label-circle, &.label-text {
+      fill: @resume-color3a;
+    }
+  }
+
+  .hover .four, .four.hover {
+    .label-line, &.arc {
+      stroke: @resume-color4a;
+    }
+    .label-circle, &.label-text {
+      fill: @resume-color4a;
+    }
+  }
+}
+
+
+/**
+ * Timeline
+ */
+
+.resume-timeline {
+  .bg {
+    fill: @black;
+    stroke: none;
+  }
+
+  .year-label {
+    font-weight: bold;
+    font-size: 14px;
+    fill: @white;
+
+    &.current-year {
+      fill: @resume-color4a;
+    }
+  }
+
+  .position-label {
+    fill: @white;
+    text-transform: uppercase;
+  }
+
+  .position-org-label, .position-label {
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 1px;
+  }
+  
+  .position-bar {
+    stroke: none;
+  }
+
+  .position-line {
+    stroke-width: 2px;
+    fill: none;
+  }
+
+  .position-line-marker {
+    stroke: none;
+  }
+
+  .position-line-marker, .position-line, .position-bar, .position-org-label {
+    .transition( 250ms ease-in-out );
+  }
+
+  .position0 {
+    .position-bar, .position-line-marker, .position-org-label {
+      fill: @resume-color1;
+    }
+    .position-line {
+      stroke: @resume-color1;
+    }
+
+    &.hover {
+      .position-line {
+        stroke: @resume-color1a;
+      }
+      .position-bar, .position-line-marker, .position-org-label {
+        fill: @resume-color1a;
+      }
+    }
+  }
+
+  .position1 {
+    .position-bar, .position-line-marker, .position-org-label {
+      fill: @resume-color2;
+    }
+    .position-line {
+      stroke: @resume-color2;
+    }
+
+    &.hover {
+      .position-line {
+        stroke: @resume-color2a;
+      }
+      .position-bar, .position-line-marker, .position-org-label {
+        fill: @resume-color2a;
+      }
+    }
+  }
+
+  .position2 {
+    .position-bar, .position-line-marker, .position-org-label {
+      fill: @resume-color3;
+    }
+    .position-line {
+      stroke: @resume-color3;
+    }
+
+    &.hover {
+      .position-line {
+        stroke: @resume-color3a;
+      }
+      .position-bar, .position-line-marker, .position-org-label {
+        fill: @resume-color3a;
+      }
+    }
+  }
+
+  .position3 {
+    .position-bar, .position-line-marker, .position-org-label {
+      fill: @resume-color4;
+    }
+    .position-line {
+      stroke: @resume-color4;
+    }
+
+    &.hover {
+      .position-line {
+        stroke: @resume-color4a;
+      }
+      .position-bar, .position-line-marker, .position-org-label {
+        fill: @resume-color4a;
+      }
+    }
+  }
+
+  .position4 {
+    .position-bar, .position-line-marker, .position-org-label {
+      fill: @resume-color5;
+    }
+    .position-line {
+      stroke: @resume-color5;
+    }
+
+    &.hover {
+      .position-line {
+        stroke: @resume-color5a;
+      }
+      .position-bar, .position-line-marker, .position-org-label {
+        fill: @resume-color5a;
+      }
+    }
+  }
+
+  .position5 {
+    .position-bar, .position-line-marker, .position-org-label {
+      fill: @resume-color6;
+    }
+    .position-line {
+      stroke: @resume-color6;
+    }
+
+    &.hover {
+      .position-line {
+        stroke: @resume-color6a;
+      }
+      .position-bar, .position-line-marker, .position-org-label {
+        fill: @resume-color6a;
+      }
+    }
+  }
+
+}
+
+
+/**
+ * Skills Chart
+ */
+
+.resume-skills, .resume-verticals {
+  margin-top: 30px;
+}
+
+.resume-skills {
+
+  .skill, .skill-label, .skill-keyword {
+    .transition( 250ms ease-in-out );
+  }
+
+  .skill {
+    margin-bottom: 20px;
+    color: @grayLight;
+  }
+
+  .skill:last-child {
+    margin-bottom: 0;
+  }
+
+  .skill-label {
+    font-size: 24px;
+    line-height: 30px;
+    text-transform: uppercase;
+  }
+
+  .label {
+    position: relative;
+
+    font-size: 24px;
+    line-height: 24px;
+    padding: 3px 5px;
+    
+    .transition( padding 250ms ease-in-out );
+
+    &:after {
+      right: 100%;
+      border: solid transparent;
+      content: " ";
+      height: 0;
+      width: 0;
+      position: absolute;
+      pointer-events: none;
+    }
+
+    &:after {
+      top: 50%;
+      margin-top: -10px;
+      border-color: rgba(0,0,0,0);
+      border-right-color: black;
+      border-width: 10px;
+    }
+  }
+
+  .skill-label-0 { color: @resume-color1; }
+  .skill-label-1 { color: @resume-color2; }
+  .skill-label-2 { color: @resume-color3; }
+  .skill-label-3 { color: @resume-color4; }
+
+  .label-0 { background-color: @resume-color1; }
+  .label-0:after { border-right-color: @resume-color1; }
+  .label-1 { background-color: @resume-color2; }
+  .label-1:after { border-right-color: @resume-color2; }
+  .label-2 { background-color: @resume-color3; }
+  .label-2:after { border-right-color: @resume-color3; }
+  .label-3 { background-color: @resume-color4; }
+  .label-3:after { border-right-color: @resume-color4; }
+
+  .skill:hover {
+    .skill-keyword {
+      color: @gray;
+    }
+
+    .label {
+      padding: 3px 10px;
+    }
+
+    .skill-label-0 { color: @resume-color1a; }
+    .skill-label-1 { color: @resume-color2a; }
+    .skill-label-2 { color: @resume-color3a; }
+    .skill-label-3 { color: @resume-color4a; }
+    
+    .label-0 { background-color: @resume-color1a; }
+    .label-0:after { border-right-color: @resume-color1a; }
+    .label-1 { background-color: @resume-color2a; }
+    .label-1:after { border-right-color: @resume-color2a; }
+    .label-2 { background-color: @resume-color3a; }
+    .label-2:after { border-right-color: @resume-color3a; }
+    .label-3 { background-color: @resume-color4a; }
+    .label-3:after { border-right-color: @resume-color4a; }
+  }
+}
+
+
+/**
+ * Verticals Pie Chart
+ */
+
+.resume-verticals {
+
+  .chart-axis {
+    fill: none;
+    stroke: @grayLight;
+    stroke-width: 1;
+  }
+
+  .chart-axis-label {
+    fill: @grayLight;
+    stroke: none;
+    font-size: 12px;
+  }
+
+  .desc {
+    font-size: 16px;
+    fill: @grayLight;
+    stroke: none;
+  }
+
+  .item {
+    stroke: none;
+  }
+
+  .legend-label {
+    stroke: none;
+    font-size: 16px;
+    letter-spacing: 1px;
+    fill: @grayLight !important;
+
+    &.hover {
+      fill: @gray !important;
+    }
+  }
+
+  .item, .legend-color, .legend-icon, .legend-label {
+    .transition( 250ms ease-in-out );
+  }
+
+  .item0 {
+    fill: @resume-color1;
+
+    &.hover {
+      fill: @resume-color1a;
+    }
+  }
+
+  .item1 {
+    fill: @resume-color2;
+
+    &.hover {
+      fill: @resume-color2a;
+    }
+  }
+
+  .item2 {
+    fill: @resume-color3;
+
+    &.hover {
+      fill: @resume-color3a;
+    }
+  }
+
+  .item3 {
+    fill: @resume-color4;
+
+    &.hover {
+      fill: @resume-color4a;
+    }
+  }
+
+  .item4 {
+    fill: @resume-color5;
+
+    &.hover {
+      fill: @resume-color5a;
+    }
+  }
+}
+

@@ -36,12 +36,14 @@ module.exports = function ( grunt ) {
     clean: [ '<%= distdir %>' ],
     copy: {
       assets: {
-        files: [{ 
-          src: [ '**' ],
-          dest: '<%= distdir %>/assets/',
-          cwd: 'src/assets',
-          expand: true
-        }]
+        files: [
+          { 
+            src: [ '**' ],
+            dest: '<%= distdir %>/assets/',
+            cwd: 'src/assets',
+            expand: true
+          }
+       ]   
       },
       data: {
         files: [
@@ -57,9 +59,12 @@ module.exports = function ( grunt ) {
         src: [ '<%= src.js %>' ],
         dest: '<%= distdir %>/assets/<%= pkg.name %>.js'
       },
-      angular: {
-        src: [ 'vendor/angular/angular.js', 'vendor/angular/angular-sanitize.js' ],
-        dest: '<%= distdir %>/assets/angular.js'
+      libs: {
+        src: [ 
+          'vendor/angular/angular.js', 
+          'vendor/angular/angular-sanitize.js'
+        ],
+        dest: '<%= distdir %>/assets/libs.js'
       }
     },
     recess: {
@@ -97,7 +102,9 @@ module.exports = function ( grunt ) {
       }
     },
     watch: {
-      files: [ '<%= src.atpl %>', '<%= src.ctpl %>', '<%= src.js %>', '<%= src.html %>', 'src/**/*.less', '<%= test.unit %>' ],
+      files: [ '<%= src.atpl %>', '<%= src.ctpl %>', '<%= src.js %>', 
+          '<%= src.html %>', 'src/**/*.less', '<%= test.unit %>', 
+          'src/assets/**/*' ],
       tasks: [ 'default', 'timestamp' ]
     }
   });
