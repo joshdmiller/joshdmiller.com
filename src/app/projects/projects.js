@@ -1,4 +1,6 @@
-angular.module( 'projects', [] )
+angular.module( 'projects', [
+  'projects.currentprojects'
+] )
 
 .config( [ '$routeProvider', function ( $routeProvider ) {
   $routeProvider.when( '/projects', {

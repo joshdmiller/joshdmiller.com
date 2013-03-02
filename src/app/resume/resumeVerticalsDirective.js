@@ -32,7 +32,7 @@ angular.module( 'resume.verticals', [ 'svg' ] )
           verticalTotal = 0,
           verticalAdjFactor = 0.0,
           sliceGapDegrees = 2, sliceGap,
-          chartWidth = 200,
+          chartWidth = 250,
           chartHeight = chartWidth,
           radius = chartWidth / 3,
           chartCenterX = chartWidth / 2,
